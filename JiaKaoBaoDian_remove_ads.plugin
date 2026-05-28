@@ -1,12 +1,15 @@
-#!name = 椹捐€冨疂鍏稿幓骞垮憡
-#!desc = 绉婚櫎寮€灞忓箍鍛娿€佹í骞呭箍鍛娿€佹偓娴獥骞垮憡銆佺ぞ鍖哄笘瀛愬箍鍛婏紝绮剧畝鎴戠殑椤甸潰銆?#!author = Marvis
-#!category = 鍘诲箍鍛?#!tag = 椹捐€冨疂鍏?
+#!name = 驾考宝典去广告
+#!desc = 移除开屏广告、横幅广告、悬浮窗广告、社区帖子广告、新用户弹窗、买车页面广告，精简我的页面。
+#!author = Marvis
+#!category = 去广告
+#!tag = 驾考宝典
+
 [General]
 bypass-tun = 
 skip-proxy = 
 
 [Rule]
-# 骞垮憡SDK鐩稿叧鍩熷悕鍏ㄩ噺鎷︽埅
+# 广告SDK相关域名全量拦截
 DOMAIN-SUFFIX,scs.kakamobi.cn,REJECT
 DOMAIN-SUFFIX,cheyouquan.kakamobi.com,REJECT
 DOMAIN-SUFFIX,swallow.kakamobi.cn,REJECT
@@ -15,26 +18,39 @@ DOMAIN-SUFFIX,jiaxiao-awd.kakamobi.cn,REJECT
 DOMAIN-SUFFIX,mcbd.maiche.com,REJECT
 DOMAIN-SUFFIX,jiakao-misc.kakamobi.cn,REJECT
 DOMAIN-SUFFIX,squirrel.kakamobi.cn,REJECT
+# 新增广告/追踪域名
+DOMAIN-SUFFIX,laofuzi.kakamobi.com,REJECT
+DOMAIN-SUFFIX,url.mucang.cn,REJECT
 
 [Rewrite]
-# 骞垮憡SDK閰嶇疆锛堥€氶厤鐗堟湰鍙凤級
+# 开屏广告SDK（通配版本号 v1~v9）
 ^https?:\/\/scs\.kakamobi\.cn\/api\/open\/v\d\/advert-sdk\/ - reject
-# 骞垮憡妯箙
+# 广告横幅
 ^https?:\/\/cheyouquan\.kakamobi\.com\/api\/open\/group\/recommend-subscribe-tag\.htm - reject
-# 搴旂敤閰嶇疆 - 鎮诞绐?^https?:\/\/swallow\.kakamobi\.cn\/api\/open\/config\/get-config\.htm - reject
-# 鎮诞绐?- 鐩存挱鎺ㄨ崘
+# 应用配置 - 悬浮窗
+^https?:\/\/swallow\.kakamobi\.cn\/api\/open\/config\/get-config\.htm - reject
+# 悬浮窗 - 直播推荐
 ^https?:\/\/monkey\.kakamobi\.cn\/api\/open\/live\/get-recommend-live-protocol\.htm - reject
-# 鏂扮敤鎴峰脊绐?^https?:\/\/jiaxiao-awd\.kakamobi\.cn\/api\/h5\/v4\/home-lead-advertise\/abtest\.htm - reject
-# 涔拌溅椤甸潰寮圭獥
+# 新用户弹窗
+^https?:\/\/jiaxiao-awd\.kakamobi\.cn\/api\/h5\/v4\/home-lead-advertise\/abtest\.htm - reject
+# 买车页面弹窗
 ^https?:\/\/mcbd\.maiche\.com\/api\/open\/v3\/user\/get-popup-window\.htm - reject
-# 鎴戠殑椤甸潰 - 绮鹃€夋湇鍔?^https?:\/\/jiakao-misc\.kakamobi\.cn\/api\/open\/my-tab-config\/selection-list\.htm - reject
-# 鎴戠殑椤甸潰 - 妯箙
+# 我的页面 - 精选服务
+^https?:\/\/jiakao-misc\.kakamobi\.cn\/api\/open\/my-tab-config\/selection-list\.htm - reject
+# 我的页面 - 横幅
 ^https?:\/\/jiakao-misc\.kakamobi\.cn\/api\/open\/my-tab-config\/banner-list\.htm - reject
 ^https?:\/\/squirrel\.kakamobi\.cn\/api\/open\/recommend-goods\/get-my-page-banner\.htm - reject
-# 涔拌溅椤甸潰骞垮憡
+# 买车页面广告
 ^https?:\/\/mcbd\.maiche\.com\/api\/open\/v2\/jiakao-business\/get-naben-advert\.htm - reject
-# 鍏朵粬骞垮憡
+# 其他广告
 ^https?:\/\/monkey\.kakamobi\.cn\/api\/open\/live-room\/get-resource\.htm - reject
+# 社区帖子广告
+^https?:\/\/cheyouquan\.kakamobi\.com\/api\/open\/group\/recommend-feed-advert\.htm - reject
+# 开屏H5广告页面
+^https?:\/\/jiaxiao-awd\.kakamobi\.cn\/api\/h5\/v\d\/splash\/ - reject
+# 通用广告配置接口
+^https?:\/\/.+\.kakamobi\.cn\/api\/open\/v\d\/advert - reject
+^https?:\/\/.+\.kakamobi\.com\/api\/open\/v\d\/advert - reject
 
 [Mitm]
-hostname = jiaxiao-awd.kakamobi.cn, cheyouquan.kakamobi.com, swallow.kakamobi.cn, monkey.kakamobi.cn, mcbd.maiche.com, jiakao-misc.kakamobi.cn, squirrel.kakamobi.cn, scs.kakamobi.cn
+hostname = jiaxiao-awd.kakamobi.cn, cheyouquan.kakamobi.com, swallow.kakamobi.cn, monkey.kakamobi.cn, mcbd.maiche.com, jiakao-misc.kakamobi.cn, squirrel.kakamobi.cn, scs.kakamobi.cn, laofuzi.kakamobi.com
