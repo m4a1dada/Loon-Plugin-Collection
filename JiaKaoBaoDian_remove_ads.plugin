@@ -1,6 +1,6 @@
 #!name = 驾考宝典去广告
 #!desc = 移除开屏广告、横幅广告、悬浮窗广告、社区帖子广告、新用户弹窗、买车页面广告，精简我的页面。
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/JiaKaoBaoDian.png
+#!icon = https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/icons/JiaKaoBaoDian.png
 #!author = Marvis
 #!category = 去广告
 #!tag = 驾考宝典
@@ -10,7 +10,6 @@ bypass-tun =
 skip-proxy = 
 
 [Rule]
-# 广告SDK相关域名全量拦截
 DOMAIN-SUFFIX,scs.kakamobi.cn,REJECT
 DOMAIN-SUFFIX,cheyouquan.kakamobi.com,REJECT
 DOMAIN-SUFFIX,swallow.kakamobi.cn,REJECT
@@ -19,37 +18,23 @@ DOMAIN-SUFFIX,jiaxiao-awd.kakamobi.cn,REJECT
 DOMAIN-SUFFIX,mcbd.maiche.com,REJECT
 DOMAIN-SUFFIX,jiakao-misc.kakamobi.cn,REJECT
 DOMAIN-SUFFIX,squirrel.kakamobi.cn,REJECT
-# 新增广告/追踪域名
 DOMAIN-SUFFIX,laofuzi.kakamobi.com,REJECT
 DOMAIN-SUFFIX,url.mucang.cn,REJECT
 
 [Rewrite]
-# 开屏广告SDK（通配版本号 v1~v9）
 ^https?:\/\/scs\.kakamobi\.cn\/api\/open\/v\d\/advert-sdk\/ - reject
-# 广告横幅
 ^https?:\/\/cheyouquan\.kakamobi\.com\/api\/open\/group\/recommend-subscribe-tag\.htm - reject
-# 应用配置 - 悬浮窗
 ^https?:\/\/swallow\.kakamobi\.cn\/api\/open\/config\/get-config\.htm - reject
-# 悬浮窗 - 直播推荐
 ^https?:\/\/monkey\.kakamobi\.cn\/api\/open\/live\/get-recommend-live-protocol\.htm - reject
-# 新用户弹窗
 ^https?:\/\/jiaxiao-awd\.kakamobi\.cn\/api\/h5\/v4\/home-lead-advertise\/abtest\.htm - reject
-# 买车页面弹窗
 ^https?:\/\/mcbd\.maiche\.com\/api\/open\/v3\/user\/get-popup-window\.htm - reject
-# 我的页面 - 精选服务
 ^https?:\/\/jiakao-misc\.kakamobi\.cn\/api\/open\/my-tab-config\/selection-list\.htm - reject
-# 我的页面 - 横幅
 ^https?:\/\/jiakao-misc\.kakamobi\.cn\/api\/open\/my-tab-config\/banner-list\.htm - reject
 ^https?:\/\/squirrel\.kakamobi\.cn\/api\/open\/recommend-goods\/get-my-page-banner\.htm - reject
-# 买车页面广告
 ^https?:\/\/mcbd\.maiche\.com\/api\/open\/v2\/jiakao-business\/get-naben-advert\.htm - reject
-# 其他广告
 ^https?:\/\/monkey\.kakamobi\.cn\/api\/open\/live-room\/get-resource\.htm - reject
-# 社区帖子广告
 ^https?:\/\/cheyouquan\.kakamobi\.com\/api\/open\/group\/recommend-feed-advert\.htm - reject
-# 开屏H5广告页面
 ^https?:\/\/jiaxiao-awd\.kakamobi\.cn\/api\/h5\/v\d\/splash\/ - reject
-# 通用广告配置接口
 ^https?:\/\/.+\.kakamobi\.cn\/api\/open\/v\d\/advert - reject
 ^https?:\/\/.+\.kakamobi\.com\/api\/open\/v\d\/advert - reject
 
