@@ -1,0 +1,29 @@
+#!name = 京东去广告
+#!desc = 移除首页3秒开屏广告、首页悬浮/通栏推广、物流页广告、订单页广告、个人页广告弹窗、新品页动图等。
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6f/f7/49/6ff749bb-9bfd-8e16-1991-49364f23d200/AppIcon-0-0-1x_U007ephone-0-1-0-0-0-0-0-0-0-0-0-85-220-0-0-0.png/230x0w.webp
+#!author = Marvis
+#!category = 去广告
+#!tag = 京东
+
+[General]
+bypass-tun = 
+skip-proxy = 
+
+[Rule]
+# 京东debug域名
+URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT
+
+[Rewrite]
+# 京东debug诊断
+^http:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
+# 广告组件
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
+# 开屏广告素材
+^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs - reject-dict
+
+[Script]
+# 京东去广告脚本（处理开屏广告、首页广告、物流广告、订单页广告、个人页广告等）
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:start|welcomeHome|getTabHomeInfo|deliverLayer|personinfoBusiness|myOrderInfo|orderTrackBusiness) script-path=https://raw.githubusercontent.com/TimKerry/Script/refs/heads/main/%E4%BA%AC%E4%B8%9C%E7%A7%BB%E9%99%A4%E5%B9%BF%E5%91%8A.js requires-body=true
+
+[Mitm]
+hostname = api.m.jd.com, m.360buyimg.com
