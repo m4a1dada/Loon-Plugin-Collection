@@ -1,5 +1,5 @@
 #!name = 京东去广告
-#!desc = 移除开屏广告、首页悬浮推广、物流/订单/个人页广告弹窗等。纯规则方案，无需下载脚本。
+#!desc = 移除开屏广告、首页悬浮推广、物流页广告、新品页动图等。纯规则方案，零脚本依赖。
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png
 #!author = Marvis
 #!category = 去广告
@@ -13,23 +13,19 @@ skip-proxy =
 DOMAIN-SUFFIX,jddebug.com,REJECT
 
 [Rewrite]
-# 开屏广告 - 清空图片列表
+# ── 开屏广告：清空图片列表 + 展示次数归零 ──
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start - reject-dict images,showTimesDaily
-# 首页 - 移除悬浮推广层
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=welcomeHome - reject
-# 首页悬浮推广
+# ── 首页：移除悬浮/通栏推广层（仅删除广告 floor 类型） ──
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=welcomeHome - reject-dict webViewFloorList
+# ── 首页通栏推广图 ──
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
-# 首页通栏推广图
+# ── 首页资源位广告图 ──
 ^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs - reject-dict
-# 新品页悬浮动图+下拉二楼
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getTabHomeInfo - reject-dict iconInfo,roofTop
-# 物流页推广
+# ── 物流页横幅推广 ──
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=deliverLayer - reject-dict bannerInfo
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=orderTrackBusiness - reject-dict bannerInfo
-# 订单页满意度+专享权益+会员推广
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=myOrderInfo - reject-dict floors
-# 个人页弹窗+横幅+动图+推荐
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=personinfoBusiness - reject-dict floors
+# ── 新品页：移除悬浮动图+下拉二楼 ──
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getTabHomeInfo - reject-dict iconInfo,roofTop
 
 [Mitm]
 hostname = api.m.jd.com, m.360buyimg.com
