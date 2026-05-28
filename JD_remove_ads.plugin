@@ -1,6 +1,6 @@
 #!name = 京东去广告
 #!desc = 移除首页3秒开屏广告、首页悬浮/通栏推广、物流页广告、订单页广告、个人页广告弹窗、新品页动图等。
-#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6f/f7/49/6ff749bb-9bfd-8e16-1991-49364f23d200/AppIcon-0-0-1x_U007ephone-0-1-0-0-0-0-0-0-0-0-0-85-220-0-0-0.png/230x0w.webp
+#!icon = https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/icons/JD.png
 #!author = Marvis
 #!category = 去广告
 #!tag = 京东
