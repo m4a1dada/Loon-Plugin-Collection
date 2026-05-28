@@ -1,6 +1,6 @@
 #!name = 京东去广告
 #!desc = 移除首页3秒开屏广告、首页悬浮/通栏推广、物流页广告、订单页广告、个人页广告弹窗、新品页动图等。
-#!icon = https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/icons/JD.png
+#!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png
 #!author = Marvis
 #!category = 去广告
 #!tag = 京东
@@ -18,7 +18,7 @@ URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT
 ^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs - reject-dict
 
 [Script]
-http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:start|welcomeHome|getTabHomeInfo|deliverLayer|personinfoBusiness|myOrderInfo|orderTrackBusiness) script-path=https://mirror.ghproxy.com/https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/jd_remove_ads.js requires-body=true
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:start|welcomeHome|getTabHomeInfo|deliverLayer|personinfoBusiness|myOrderInfo|orderTrackBusiness) script-path=https://gcore.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/jd_remove_ads.js requires-body=true
 
 [Mitm]
 hostname = api.m.jd.com, m.360buyimg.com
