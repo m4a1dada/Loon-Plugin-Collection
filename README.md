@@ -10,15 +10,16 @@
 
 | App | 插件文件 | 直链 | 广告类型 |
 |-----|---------|------|---------|
-| 驾考宝典 | [JiaKaoBaoDian_remove_ads.plugin](./JiaKaoBaoDian_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/JiaKaoBaoDian_remove_ads.plugin) | 开屏/横幅/悬浮窗/弹窗/社区帖子/我的页面 |
-| 京东 | [JD_remove_ads.plugin](./JD_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/JD_remove_ads.plugin) | 首页3秒开屏/悬浮推广/物流/订单/个人页广告 |
+| 驾考宝典 | [JiaKaoBaoDian_remove_ads.plugin](./JiaKaoBaoDian_remove_ads.plugin) | [Raw](https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/JiaKaoBaoDian_remove_ads.plugin) | 开屏/横幅/悬浮窗/弹窗/社区帖子/我的页面 |
+| 京东 | [JD_remove_ads.plugin](./JD_remove_ads.plugin) | [Raw](https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/JD_remove_ads.plugin) | 首页3秒开屏/悬浮推广/物流/订单/个人页广告 |
+| 中国移动 | [ChinaMobile.plugin](./ChinaMobile.plugin) | [Raw](https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/ChinaMobile.plugin) | 开屏/弹窗/首页促销/发现页广告 |
 
 ## 使用方法
 
 ### 方式一：Loon 内直接订阅
 1. 打开 Loon → 配置 → 插件
 2. 点击右上角 + → 从 URL 添加
-3. 粘贴插件直链（推荐使用 jsdelivr CDN 链接），确认添加
+3. 粘贴插件直链（使用 raw.githubusercontent.com 源），确认添加
 4. 开启插件开关并启用 MITM
 
 ### 方式二：手动导入
@@ -32,7 +33,8 @@ Loon-Plugin-Collection/
 ├── README.md                          # 本文件
 ├── JiaKaoBaoDian_remove_ads.plugin    # 驾考宝典去广告
 ├── JD_remove_ads.plugin               # 京东去广告
-└── ... (更多插件持续添加中)
+├── ChinaMobile.plugin                 # 中国移动去广告
+└── icons/                             # 图标目录
 ```
 
 ## 去广告原理

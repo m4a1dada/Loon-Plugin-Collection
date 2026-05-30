@@ -2,6 +2,8 @@
 #!desc = 去除中国移动App开屏广告、弹窗广告、首页及发现页促销广告
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png
 #!author = m4a1dada
+#!category = 去广告
+#!tag = 中国移动
 
 [General]
 bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
@@ -13,7 +15,7 @@ hijack-dns = *:53
 DOMAIN-SUFFIX,app.10086.cn,DIRECT
 DOMAIN-SUFFIX,client.app.coc.10086.cn,DIRECT
 
-[URL Rewrite]
+[Rewrite]
 # 开屏广告 - 使用 reject-dict 返回空 JSON 清空启动广告数据
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject-dict
 # 探索页广告列表
@@ -23,5 +25,5 @@ DOMAIN-SUFFIX,client.app.coc.10086.cn,DIRECT
 # 发现页促销广告
 ^https?:\/\/app\.10086\.cn\/biz-orange\/DH\/findSale\/getsaleAdver - reject
 
-[MITM]
+[Mitm]
 hostname = client.app.coc.10086.cn, app.10086.cn
