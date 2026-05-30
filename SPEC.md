@@ -11,7 +11,7 @@
 | 仓库地址 | `https://github.com/m4a1dada/Loon-Plugin-Collection` |
 | 默认分支 | `main` |
 | 维护者 | Marvis / m4a1dada |
-| 直链格式 | `https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/文件名.plugin` |
+| 直链格式 | `https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/文件名.plugin` |
 
 **本地 Clone 命令：**
 ```bash
@@ -39,10 +39,12 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 
 ### 图标规则
 
-- **必须**使用 `raw.githubusercontent.com` 源，Loon 原生识别
-- **禁止**使用 `jsDelivr`、`cdn.jsdelivr.net` 或任何 CDN 加速域名
+- `#!icon` 字段**必须**使用 `raw.githubusercontent.com` 源（Loon 原生识别，不乱码）
+- **禁止**在 `#!icon` 中使用 `jsDelivr` 或任何 CDN 域名
 - 图标 URL 示例：`https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/icons/AppName.png`
 - 图标文件统一放在仓库 `icons/` 目录下
+
+> 注意区分：直链（README 表格中供 Loon 订阅的链接）用 jsDelivr CDN；`#!icon` 字段用 raw.githubusercontent.com。两者目的不同，不可混用。
 
 ### 零外部脚本
 
@@ -69,6 +71,20 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 | `[Mitm]` | MITM 主机名列表 |
 
 **禁止使用**：`[URL Rewrite]`、`[MITM]` 等变体，一律用上述标准段名。
+
+---
+
+## 参考模板
+
+`JD_remove_ads.plugin` 为基准模板，所有新插件参照此文件格式：
+
+- 完整元信息标签（name / desc / icon / author / category / tag）
+- 纯 Loon 原生规则（REJECT / reject / reject-dict），零外部脚本
+- 注释分行清晰，使用 `# ── xxx ──` 分组
+- `#!icon` 使用 raw.githubusercontent.com 源
+- 直链使用 jsDelivr CDN（`cdn.jsdelivr.net/gh/...@main/...`）
+
+新插件直接复制 JD_remove_ads.plugin 结构，修改元信息和规则即可。
 
 ---
 
