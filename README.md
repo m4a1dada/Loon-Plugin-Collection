@@ -15,6 +15,7 @@
 | 驾考宝典 | [JiaKaoBaoDian_remove_ads.plugin](./JiaKaoBaoDian_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/JiaKaoBaoDian_remove_ads.plugin) | 开屏/横幅/悬浮窗/弹窗/社区帖子/我的页面 |
 | 京东 | [JD_remove_ads.plugin](./JD_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/JD_remove_ads.plugin) | 首页3秒开屏/悬浮推广/物流/订单/个人页广告 |
 | 中国移动 | [ChinaMobile.plugin](./ChinaMobile.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/ChinaMobile.plugin) | 开屏/弹窗/首页促销/发现页广告 |
+| 微信 | [WeChat_remove_ads.plugin](./WeChat_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/WeChat_remove_ads.plugin) | 朋友圈图文广告/视频广告 |
 
 ## 使用方法
 
