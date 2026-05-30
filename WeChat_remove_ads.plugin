@@ -1,6 +1,6 @@
 #!name = 微信朋友圈去广告
 #!desc = 移除朋友圈信息流广告（图文广告、视频广告），纯规则方案，零脚本依赖
-#!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/WeChat.png
+#!icon = https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/icons/WeChat.png
 #!author = Marvis
 #!category = 去广告
 #!tag = 微信
@@ -10,18 +10,24 @@ bypass-tun =
 skip-proxy = 
 
 [Rule]
-# ── 朋友圈广告投放域名 ──
-DOMAIN-SUFFIX,snsad.weixin.qq.com,REJECT
-# ── 朋友圈视频广告 ──
-DOMAIN-SUFFIX,snsvideo.sns.weixin.qq.com,REJECT
-# ── 朋友圈广告素材 CDN ──
-DOMAIN-SUFFIX,snsimg.sns.weixin.qq.com,REJECT
-# ── 微信广告联盟 ──
-DOMAIN-SUFFIX,wx.qlogo.cn,REJECT
-
-[Rewrite]
-# ── 朋友圈时间线广告数据清除 ──
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/getmasssendmsg - reject-dict
+# ── 微信朋友圈广告投放域 ──
+DOMAIN,wxa.wxs.qq.com,REJECT
+# ── 微信广告图片 CDN ──
+DOMAIN,wximg.wxs.qq.com,REJECT
+# ── 微信广告 ──
+DOMAIN,wxsmw.wxs.qq.com,REJECT
+# ── 朋友圈广告视频/图片素材 ──
+DOMAIN,wxsnsdy.wxs.qq.com,REJECT
+# ── 朋友圈广告缩略图 ──
+DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
+# ── 朋友圈广告 CDN（腾讯云） ──
+DOMAIN,wxsnsdy.tc.qq.com,REJECT
+# ── 朋友圈广告视频 ──
+DOMAIN,wxsnsdy.video.qq.com,REJECT
+# ── 微信广告桥接 ──
+DOMAIN,localhost.weixin.qq.com,REJECT
+DOMAIN,badjs.weixinbridge.com,REJECT
+DOMAIN,cube.weixinbridge.com,REJECT
 
 [Mitm]
-hostname = mp.weixin.qq.com
+hostname =
