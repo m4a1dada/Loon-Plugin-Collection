@@ -1,0 +1,35 @@
+#!name = 肯德基去广告
+#!desc = 去除肯德基App开屏广告及内部广告。纯规则方案，零脚本依赖。
+#!icon = https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/icons/KFC.png
+#!author = m4a1dada
+#!category = tool
+#!tag = 去广告
+
+[General]
+bypass-tun = 
+skip-proxy = 
+
+[Rule]
+# ── 腾讯优量汇/广点通 ──
+DOMAIN-SUFFIX,e.qq.com,REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN-SUFFIX,union.qq.com,REJECT
+DOMAIN-SUFFIX,sdk.e.qq.com,REJECT
+DOMAIN-SUFFIX,sdkreport.e.qq.com,REJECT
+DOMAIN-SUFFIX,pcm.qq.com,REJECT
+# ── 穿山甲/字节跳动 ──
+DOMAIN-SUFFIX,pangle.io,REJECT
+DOMAIN-SUFFIX,pangolin-sdk.cn,REJECT
+DOMAIN-SUFFIX,bytedance.com,REJECT
+DOMAIN-SUFFIX,bytedance.net,REJECT
+DOMAIN-SUFFIX,byted.org,REJECT
+DOMAIN-SUFFIX,snssdk.com,REJECT
+# ── 百度广告 ──
+DOMAIN-SUFFIX,mobads.baidu.com,REJECT
+DOMAIN-SUFFIX,cpro.baidu.com,REJECT
+DOMAIN-SUFFIX,pos.baidu.com,REJECT
+DOMAIN-SUFFIX,cbjs.baidu.com,REJECT
+
+[Rewrite]
+
+[Mitm]
