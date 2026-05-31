@@ -127,10 +127,34 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 
 ## Loon 插件图标踩坑总结
 
+### 图标格式规范
 - 图标必须 120×120 RGB PNG（RGBA 模式不显示）
 - 图标文件头必须以 `89504e47` 开头（真 PNG，ICO 伪装不行）
-- `#!icon` 使用 `raw.githubusercontent.com` 源（jsDelivr CDN 在 Loon 下载图标时不可靠）
+- 必须去除 ICC Profile（Loon 解析带 ICC Profile 的 PNG 时图标不显示）
+- `#!icon` 使用 `jsDelivr CDN` 源（`raw.githubusercontent.com` 在 Loon 内部下载时直连被 GFW 阻断，导致下载失败回退到文字图标；用户 Safari 走代理能打开不代表 Loon 自身能下载）
 - 插件直链使用 jsDelivr CDN
+
+### Loon 图标缓存终极难题（KFC 经验）
+
+Loon 对插件的图标存在**多层顽固缓存**，以下方案按尝试顺序排列，**实际只有最后一条生效**：
+
+| 尝试方案 | 效果 |
+|----------|------|
+| 覆盖图标文件（同名 PNG） | 无效 |
+| 换图标文件名（KFC.png → KFC_icon.png）+ 更新 #!icon | 无效 |
+| 切换 CDN 源（raw → jsDelivr） | 无效（解决的是 GFW 阻断问题，不是缓存问题） |
+| 删除插件 + 杀 Loon 进程 + 重新添加 | 无效（Loon 对已知插件 ID 保留图标映射） |
+| **换插件文件名**（KFC_remove_ads.plugin → KFC_adblock.plugin） | ✅ 唯一生效 |
+
+**根因**：Loon 以插件文件名为 key 缓存图标。改图标文件、换 icon URL、杀进程重启，都不会触发 Loon 清掉旧缓存。只有换一个全新的插件文件名，Loon 才会把它当作全新插件，重新解析 `#!icon` 并下载图标。
+
+**结论**：当图标频繁修改需要刷新时，直接换插件文件名，不要浪费时间在其他方案上。
+
+### 源文件追溯
+
+- 如果用户提供过原始素材（jpg/png 等），必须直接用原始素材重新生成图标
+- 不要假设本地仓库中的旧文件是正确的，尤其在经过多轮修改后
+- 本次根因之一就是 `KFC.png` 在仓库中一直是早期红底白字版本，从未被正确覆盖
 
 ## KFC 插件开发要点
 
