@@ -1,6 +1,6 @@
 #!name = 微信朋友圈去广告
 #!desc = 移除朋友圈信息流广告（图文广告、视频广告），纯规则方案，零脚本依赖
-#!icon = https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/icons/WeChat.png
+#!icon = https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/icons/WeChat.png
 #!author = Marvis
 #!category = 去广告
 #!tag = 微信
