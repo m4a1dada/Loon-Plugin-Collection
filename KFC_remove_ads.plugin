@@ -1,6 +1,6 @@
 #!name = 肯德基去广告
 #!desc = 去除肯德基App开屏广告及内部广告（基于实际抓包分析）。纯规则方案，零脚本依赖。
-#!icon = https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/icons/KFC_v2.png
+#!icon = https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/icons/KFC_v2.png
 #!author = m4a1dada
 #!category = tool
 #!tag = 去广告
