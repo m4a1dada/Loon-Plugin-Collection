@@ -121,6 +121,22 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 | 驾考宝典 | `JiaKaoBaoDian_remove_ads.plugin` | 开屏/横幅/悬浮窗/弹窗/社区帖子/我的页面 |
 | 京东 | `JD_remove_ads.plugin` | 首页3秒开屏/悬浮推广/物流/订单/个人页广告 |
 | 中国移动 | `ChinaMobile.plugin` | 开屏/弹窗/首页促销/发现页广告 |
+| 肯德基 | `KFC_remove_ads.plugin` | 去除开屏广告及内部广告 |
+
+---
+
+## Loon 插件图标踩坑总结
+
+- 图标必须 120×120 RGB PNG（RGBA 模式不显示）
+- 图标文件头必须以 `89504e47` 开头（真 PNG，ICO 伪装不行）
+- `#!icon` 使用 `raw.githubusercontent.com` 源（jsDelivr CDN 在 Loon 下载图标时不可靠）
+- 插件直链使用 jsDelivr CDN
+
+## KFC 插件开发要点
+
+- KFC App（v6.29.0 iOS）不使用第三方广告 SDK，广告由百胜自有系统投放
+- 核心广告域名：`res.kfc.com.cn/CRM/kfcad/`（开屏广告预加载）、`dynamicad.kfc.com.cn`（动态广告 API）、`sares.kfc.com.cn`（广告 CDN）
+- 直接给用户 jsDelivr URL，用户自行在 Loon 中添加
 
 ---
 
