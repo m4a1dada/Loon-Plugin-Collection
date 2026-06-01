@@ -39,8 +39,8 @@ DOMAIN-SUFFIX,smart.789.image.mucang.cn,REJECT
 ^https?:\/\/jiaxiao-awd\.kakamobi\.cn\/api\/h5\/v\d\/splash\/ - reject
 ^https?:\/\/.+\.kakamobi\.cn\/api\/open\/v\d\/advert - reject
 ^https?:\/\/.+\.kakamobi\.com\/api\/open\/v\d\/advert - reject
-^https?:\/\/789\.kakamobi\.cn\/.+adver - reject-img
-^https?:\/\/smart\.789\.image\.mucang\.cn\/advert - reject-img
+^https?:\/\/789\.kakamobi\.cn\/ - reject-img
+^https?:\/\/smart\.789\.image\.mucang\.cn\/ - reject-img
 
 [Mitm]
 hostname = jiaxiao-awd.kakamobi.cn, cheyouquan.kakamobi.com, swallow.kakamobi.cn, monkey.kakamobi.cn, mcbd.maiche.com, jiakao-misc.kakamobi.cn, squirrel.kakamobi.cn, scs.kakamobi.cn, laofuzi.kakamobi.com, 789.kakamobi.cn, smart.789.image.mucang.cn
