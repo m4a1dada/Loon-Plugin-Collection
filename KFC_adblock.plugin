@@ -1,5 +1,5 @@
 #!name = 肯德基去广告
-#!desc = 去除肯德基App开屏广告及内部广告（基于实际抓包分析）。纯规则方案，零脚本依赖。
+#!desc = 去除肯德基App开屏广告及内部广告（基于实际抓包分析）。纯规则方案，零脚本依赖。开屏广告倒计时为App本地硬编码逻辑，无法跳过但广告内容已屏蔽。
 #!icon = https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/icons/KFC_v3.png
 #!author = m4a1dada
 #!category = tool
@@ -25,26 +25,9 @@ DOMAIN-SUFFIX,abplatform.yumchina.com,REJECT
 # 设备指纹（广告反作弊/追踪）
 DOMAIN-SUFFIX,fp.hwwt8.com,REJECT
 
-# ── 第三方广告 SDK（预防性拦截，常见于各类 App）──
-# 腾讯优量汇 / 广点通
-DOMAIN-SUFFIX,e.qq.com,REJECT
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
-DOMAIN-SUFFIX,union.qq.com,REJECT
-DOMAIN-SUFFIX,sdk.e.qq.com,REJECT
-DOMAIN-SUFFIX,sdkreport.e.qq.com,REJECT
-DOMAIN-SUFFIX,pcm.qq.com,REJECT
-# 穿山甲 / 字节跳动
-DOMAIN-SUFFIX,pangle.io,REJECT
-DOMAIN-SUFFIX,pangolin-sdk.cn,REJECT
-DOMAIN-SUFFIX,bytedance.com,REJECT
-DOMAIN-SUFFIX,bytedance.net,REJECT
-DOMAIN-SUFFIX,byted.org,REJECT
-DOMAIN-SUFFIX,snssdk.com,REJECT
-# 百度广告
-DOMAIN-SUFFIX,mobads.baidu.com,REJECT
-DOMAIN-SUFFIX,cpro.baidu.com,REJECT
-DOMAIN-SUFFIX,pos.baidu.com,REJECT
-DOMAIN-SUFFIX,cbjs.baidu.com,REJECT
+# ── 第三方广告 SDK 预防性规则已移除 ──
+# KFC App 经抓包确认使用百胜自有广告系统，不使用腾讯/字节/百度等第三方 SDK。
+# 宽泛域名（如 bytedance.com）会误伤正常 CDN 内容加载。
 
 [Rewrite]
 
