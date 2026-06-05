@@ -1,5 +1,5 @@
 #!name=碧淘充电桩去广告
-#!desc=碧淘充电桩小程序去广告，拦截 8ziben.com 广告SDK域名
+#!desc=碧淘充电桩小程序去广告，拦截广告SDK配置/上报及微信广告素材CDN
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WeixinMiniPrograms.png
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!category=小程序
@@ -12,9 +12,9 @@
 
 [Rule]
 DOMAIN-SUFFIX, 8ziben.com, REJECT
-
-[Rewrite]
-^https:\/\/api-mini\.cdyun\.vip\/btzncdz\/banner\/index reject-dict
+DOMAIN-SUFFIX, sdk.fliduo.cn, REJECT
+DOMAIN-SUFFIX, wxsmw.wxs.qq.com, REJECT
+DOMAIN-SUFFIX, wximg.wxs.qq.com, REJECT
 
 [MitM]
-hostname=api-mini.cdyun.vip, 8ziben.com
+hostname=api-mini.cdyun.vip, 8ziben.com, sdk.fliduo.cn
