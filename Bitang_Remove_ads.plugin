@@ -13,5 +13,8 @@
 [Rule]
 DOMAIN-SUFFIX, 8ziben.com, REJECT
 
+[Rewrite]
+^https:\/\/api-mini\.cdyun\.vip\/btzncdz\/banner\/index reject-dict
+
 [MitM]
 hostname=api-mini.cdyun.vip, 8ziben.com
