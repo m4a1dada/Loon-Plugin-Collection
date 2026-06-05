@@ -17,6 +17,7 @@
 | 中国移动 | [ChinaMobile.plugin](./ChinaMobile.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/ChinaMobile.plugin) | 开屏/弹窗/首页促销/发现页广告 |
 | 微信 | [WeChat_remove_ads.plugin](./WeChat_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/WeChat_remove_ads.plugin) | 朋友圈图文广告/视频广告 |
 | 肯德基 | [KFC_remove_ads.plugin](./KFC_remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/KFC_remove_ads.plugin) | 去除开屏广告及内部广告 |
+| 微信小程序 | [WexinMiniPrograms_Remove_ads.plugin](./WexinMiniPrograms_Remove_ads.plugin) | [Raw](https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/WexinMiniPrograms_Remove_ads.plugin) | 40+ 小程序开屏/弹窗/横幅/信息流广告 |
 
 ## 使用方法
 
@@ -34,13 +35,15 @@
 
 ```
 Loon-Plugin-Collection/
-├── README.md                          # 本文件
-├── JiaKaoBaoDian_remove_ads.plugin    # 驾考宝典去广告
-├── JD_remove_ads.plugin               # 京东去广告
-├── ChinaMobile.plugin                 # 中国移动去广告
-├── WeChat_remove_ads.plugin           # 微信去广告
-├── KFC_remove_ads.plugin              # 肯德基去广告
-└── icons/                             # 图标目录
+├── README.md                              # 本文件
+├── SPEC.md                                # 开发规范与交接文档
+├── JiaKaoBaoDian_remove_ads.plugin        # 驾考宝典去广告
+├── JD_remove_ads.plugin                   # 京东去广告
+├── ChinaMobile.plugin                     # 中国移动去广告
+├── WeChat_remove_ads.plugin               # 微信去广告
+├── KFC_remove_ads.plugin                  # 肯德基去广告
+├── WexinMiniPrograms_Remove_ads.plugin    # 微信小程序去广告
+└── icons/                                 # 图标目录
 ```
 
 ## 去广告原理

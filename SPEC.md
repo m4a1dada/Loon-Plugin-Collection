@@ -122,6 +122,7 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 | 京东 | `JD_remove_ads.plugin` | 首页3秒开屏/悬浮推广/物流/订单/个人页广告 |
 | 中国移动 | `ChinaMobile.plugin` | 开屏/弹窗/首页促销/发现页广告 |
 | 肯德基 | `KFC_remove_ads.plugin` | 去除开屏广告及内部广告 |
+| 微信小程序 | `WexinMiniPrograms_Remove_ads.plugin` | 40+ 小程序开屏/弹窗/横幅/信息流广告 |
 
 ---
 
@@ -177,12 +178,69 @@ git push
 
 ---
 
+## 微信小程序去广告插件开发全流程
+
+### 模板来源
+
+插件基于 kelee.one 社区模板创建，原模板地址：
+```
+https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx
+```
+
+> kelee.one 对普通 User-Agent 返回 403 反爬，必须使用 Loon 客户端 UA 抓取：
+> `Loon/1.0 CFNetwork/1496 Darwin/23.5.0`
+
+### 新增小程序规则的标准流程
+
+当用户提供某个小程序的 Loon 抓包数据（.zip 文件）要求新增广告规则时：
+
+1. **解压抓包**：遍历所有 `request_header_raw.txt`，提取 `Host` 头统计唯一域名
+2. **锁定广告域名**：搜索请求/响应体中的广告特征关键词（`advert`、`adunit`、`ad_id`、`ad_type`、`pm_id=adunit-xxx`、`sdk_ver` 等）
+3. **检查主业务 API**：确认广告字段是否夹杂在业务接口的响应体中（关键词 `banner`、`popup`、`广告`、`推广` 等）
+4. **添加规则**：
+   - 广告专用域名 → `[Rule]` 中添加 `DOMAIN-SUFFIX, xxx.com, REJECT`
+   - 广告字段在业务 API 中 → `[Rewrite]` 中用 `reject-dict` 或 `response-body-json-del` 处理
+5. **更新 MITM**：将新域名加入 `[MitM]` hostname 列表（用 `DOMAIN-SUFFIX` 拦截的域名同时加入以便后续分析）
+6. **推送并交付**：`commit + push` 后，直接给用户 jsDelivr 直链，不附带解释或操作说明
+
+### 常见广告 SDK 特征
+
+| 特征 | 说明 |
+|------|------|
+| `wxmini-events.8ziben.com` | 广告 SDK 事件上报域名 |
+| 请求体含 `appid=Z9694...`、`ad_id=J5...` | 第三方广告 SDK 初始化参数 |
+| `pm_id=adunit-xxx` | 广告位标识 |
+| `sdk_ver=1.0.16` | SDK 版本号 |
+
+### DNS 拦截局限
+
+- 广告 SDK 的弹窗容器由小程序本地代码创建，网络层拦截只能阻止广告内容加载，不能消除弹窗空壳
+- 如弹窗仍然出现但内容黑屏，说明网络拦截生效但客户端容器无法消除
+- 需要用户在广告弹窗出现**之前**就开始抓包，才能捕获 SDK 初始化请求
+
+### 文件说明
+
+| 文件 | 用途 |
+|------|------|
+| `WexinMiniPrograms_Remove_ads.lpx` | Loon 可导入格式（开发/编辑用） |
+| `WexinMiniPrograms_Remove_ads.plugin` | 纯文本格式（GitHub 存储 + jsDelivr 分发） |
+
+---
+
 ## 用户偏好（来自长期规则）
 
+### 工作习惯
+- Agent 任务执行被中断后应默认继续执行，无需等待用户逐次确认
+- Agent 交付 Loon 插件时仅输出 jsDelivr 直链 URL，不附带解释或操作说明
+- Agent 排查问题时优先对比已有成功案例找差异，避免多轮盲目试错
+- Agent 修改 Git 仓库文件时直接 commit + push 即可，无需征求确认
+- Agent 向 GitHub 提交文件前必须检查内容，避免写入明文 Token 或敏感凭证
+
+### 内容创作
 - 生成视频内容时禁止添加水印、文字、人脸，避免画面抖动和频闪
 - 基于参考素材创作时以原创方式重新设计，避免直接复刻
 - 使用中文回复，保持简洁直接
 
 ---
 
-*最后更新：2026-05-31*
+*最后更新：2026-06-05*
