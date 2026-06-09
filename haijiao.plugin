@@ -6,7 +6,7 @@
 #!tag=rewrite,video,unlock
 
 [rewrite_local]
-^https?:\/\/haijiao\.com\/api\/(attachment|topic\/\d+|banner\/banner_list) url script-response-body https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/haijiao.js
+http-response ^https?:\/\/haijiao\.com\/api\/(attachment|topic\/\d+|banner\/banner_list) script-path=https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/haijiao.js, requires-body=true, timeout=60, tag=haijiao
 
 [mitm]
 hostname = haijiao.com,*.haijiao.com
