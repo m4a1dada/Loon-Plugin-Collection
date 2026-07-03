@@ -1,0 +1,38 @@
+#!name=美团去广告
+#!desc=去除美团App开屏广告、首页弹窗、信息流广告、图片广告等
+#!author=Marvis
+#!tag=去广告
+#!system=ios
+#!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Meituan.png
+#!date=2026-07-03 00:00:00
+
+[Rule]
+URL-REGEX, ^https?://p\d\.meituan\.net/(mmc|wmbanner)/, REJECT
+URL-REGEX, ^https?://img\.meituan\.net/(adunion|display|midas)/, REJECT
+URL-REGEX, ^https?://p\d\.meituan\.net/movie/[A-Za-z0-9]+\.jpg\?may_covertWebp, REJECT
+URL-REGEX, ^https?://(s3plus|flowplus)\.meituan\.net/.+/linglong/, REJECT
+URL-REGEX, ^https?://apimobile\.meituan\.com/appupdate/, REJECT
+
+[Rewrite]
+# 开屏广告
+^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture) reject-dict
+^https?:\/\/www\.meituan\.com\/api\/v\d\/appstatus reject
+^https?:\/\/mapi\.meituan\.com\/api\/home\/splash reject-dict
+^https?:\/\/mapi\.meituan\.com\/api\/home\/startup reject-dict
+
+# 首页弹窗与悬浮
+^https?:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo response-body-json-del data.popUpWindows
+
+# 信息流广告
+^https?:\/\/mapi\.meituan\.com\/api\/feed\/ad reject-dict
+
+# 首页Banner推广
+^https?:\/\/mapi\.meituan\.com\/api\/home\/banner reject-dict
+^https?:\/\/mapi\.meituan\.com\/api\/home\/operation reject-dict
+
+# 启动页广告素材
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) reject-dict
+
+[MitM]
+hostname= wmapi.meituan.com, www.meituan.com, mapi.meituan.com, rms.meituan.com, s3plus.meituan.net, flowplus.meituan.net, apimobile.meituan.com
