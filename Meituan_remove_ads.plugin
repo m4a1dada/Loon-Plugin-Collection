@@ -1,11 +1,14 @@
 #!name=美团去广告
 #!desc=去除美团App开屏广告、首页弹窗、信息流广告、图片广告等
+#!openUrl=https://apps.apple.com/app/id423237029
 #!author=Marvis
 #!tag=去广告
-#!system=ios
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
-#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/meituan(1).png
-#!date=2026-07-05 01:35:00
+#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/meituan.png
+#!date=2026-07-05 01:40:00
 
 [Rule]
 DOMAIN, apimobile.meituan.com, REJECT
