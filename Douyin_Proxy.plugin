@@ -1,0 +1,28 @@
+#!name=抖音分流
+#!desc=抖音地区分流：API走PROXY(切全局节点改IP)，视频CDN直连
+#!author=Marvis
+#!tag=分流
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/douyin.png
+#!date=2026-07-05 03:10:00
+
+[Rule]
+DOMAIN-SUFFIX, byteimg.com, DIRECT
+DOMAIN-SUFFIX, ibytedtos.com, DIRECT
+DOMAIN-SUFFIX, pstatp.com, DIRECT
+DOMAIN-SUFFIX, douyinvod.com, DIRECT
+DOMAIN-SUFFIX, amemv.com, PROXY
+DOMAIN-SUFFIX, snssdk.com, PROXY
+DOMAIN-SUFFIX, bytegecko.com, PROXY
+DOMAIN-SUFFIX, douyin.com, PROXY
+DOMAIN-SUFFIX, bytedanceapi.com, PROXY
+DOMAIN-SUFFIX, toutiaocloud.cn, PROXY
+DOMAIN-SUFFIX, bytecdn.com, PROXY
+DOMAIN-SUFFIX, volces.com, PROXY
+DOMAIN-SUFFIX, douyincdn.com, PROXY
+DOMAIN-SUFFIX, douyinpic.com, PROXY
+DOMAIN-SUFFIX, douyinliving.com, PROXY
+DOMAIN-SUFFIX, douyinstatic.com, PROXY
