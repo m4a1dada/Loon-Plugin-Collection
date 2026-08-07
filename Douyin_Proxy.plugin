@@ -1,4 +1,4 @@
-#!name=抖音分流
+﻿#!name=抖音分流
 #!desc=抖音地区分流：API走PROXY(切全局节点改IP)，视频CDN直连
 #!author=Marvis
 #!tag=分流
@@ -6,7 +6,7 @@
 #!system_version=
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
-#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/douyin.png
+#!icon=https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/douyin_icon.png
 #!date=2026-07-05 03:10:00
 
 [Rule]
