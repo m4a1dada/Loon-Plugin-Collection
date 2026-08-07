@@ -1,0 +1,34 @@
+#!name=抖音IP属地
+#!desc=抖音地区分流：API走代理策略组(选地区)，视频CDN直连保证流畅
+#!author=Marvis
+#!tag=分流
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/douyin.png
+#!date=2026-07-05 02:30:00
+
+[Policy]
+Douyin = select, 日本, 香港, 新加坡, 美国, DIRECT
+
+[Rule]
+# 视频资源直连，保证播放正常
+DOMAIN-SUFFIX, byteimg.com, DIRECT
+DOMAIN-SUFFIX, ibytedtos.com, DIRECT
+DOMAIN-SUFFIX, pstatp.com, DIRECT
+DOMAIN-SUFFIX, douyinvod.com, DIRECT
+
+# 抖音核心请求走可选策略
+DOMAIN-SUFFIX, amemv.com, Douyin
+DOMAIN-SUFFIX, snssdk.com, Douyin
+DOMAIN-SUFFIX, bytegecko.com, Douyin
+DOMAIN-SUFFIX, douyin.com, Douyin
+DOMAIN-SUFFIX, bytedanceapi.com, Douyin
+DOMAIN-SUFFIX, toutiaocloud.cn, Douyin
+DOMAIN-SUFFIX, bytecdn.com, Douyin
+DOMAIN-SUFFIX, volces.com, Douyin
+DOMAIN-SUFFIX, douyincdn.com, Douyin
+DOMAIN-SUFFIX, douyinpic.com, Douyin
+DOMAIN-SUFFIX, douyinliving.com, Douyin
+DOMAIN-SUFFIX, douyinstatic.com, Douyin
