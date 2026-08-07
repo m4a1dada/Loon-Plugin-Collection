@@ -1,5 +1,5 @@
-#!name=抖音IP属地
-#!desc=抖音地区分流：API走代理，视频CDN直连保证流畅。切换全局节点即可改IP属地。
+#!name=抖音分流
+#!desc=抖音地区分流：API走PROXY(切全局节点改IP)，视频CDN直连
 #!author=Marvis
 #!tag=分流
 #!system=
@@ -7,7 +7,10 @@
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
 #!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/douyin.png
-#!date=2026-07-05 02:40:00
+#!date=2026-07-05 03:00:00
+
+[Policy]
+Douyin_select = select, PROXY, DIRECT
 
 [Rule]
 # 视频资源直连，保证播放正常
@@ -16,16 +19,16 @@ DOMAIN-SUFFIX, ibytedtos.com, DIRECT
 DOMAIN-SUFFIX, pstatp.com, DIRECT
 DOMAIN-SUFFIX, douyinvod.com, DIRECT
 
-# 抖音核心请求跟随全局代理
-DOMAIN-SUFFIX, amemv.com, PROXY
-DOMAIN-SUFFIX, snssdk.com, PROXY
-DOMAIN-SUFFIX, bytegecko.com, PROXY
-DOMAIN-SUFFIX, douyin.com, PROXY
-DOMAIN-SUFFIX, bytedanceapi.com, PROXY
-DOMAIN-SUFFIX, toutiaocloud.cn, PROXY
-DOMAIN-SUFFIX, bytecdn.com, PROXY
-DOMAIN-SUFFIX, volces.com, PROXY
-DOMAIN-SUFFIX, douyincdn.com, PROXY
-DOMAIN-SUFFIX, douyinpic.com, PROXY
-DOMAIN-SUFFIX, douyinliving.com, PROXY
-DOMAIN-SUFFIX, douyinstatic.com, PROXY
+# 抖音核心请求走策略组
+DOMAIN-SUFFIX, amemv.com, Douyin_select
+DOMAIN-SUFFIX, snssdk.com, Douyin_select
+DOMAIN-SUFFIX, bytegecko.com, Douyin_select
+DOMAIN-SUFFIX, douyin.com, Douyin_select
+DOMAIN-SUFFIX, bytedanceapi.com, Douyin_select
+DOMAIN-SUFFIX, toutiaocloud.cn, Douyin_select
+DOMAIN-SUFFIX, bytecdn.com, Douyin_select
+DOMAIN-SUFFIX, volces.com, Douyin_select
+DOMAIN-SUFFIX, douyincdn.com, Douyin_select
+DOMAIN-SUFFIX, douyinpic.com, Douyin_select
+DOMAIN-SUFFIX, douyinliving.com, Douyin_select
+DOMAIN-SUFFIX, douyinstatic.com, Douyin_select
