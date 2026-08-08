@@ -1,0 +1,17 @@
+# 抖音全域名分流
+# 用途：配合代理策略修改抖音显示的IP属地
+# 包含视频CDN域名，需代理节点带宽充足否则视频卡顿
+
+DOMAIN-SUFFIX, snssdk.com
+DOMAIN-SUFFIX, douyin.com
+DOMAIN-SUFFIX, bytedanceapi.com
+DOMAIN-SUFFIX, toutiaocloud.cn
+DOMAIN-SUFFIX, bytecdn.com
+DOMAIN-SUFFIX, volces.com
+DOMAIN-SUFFIX, douyincdn.com
+DOMAIN-SUFFIX, douyinpic.com
+DOMAIN-SUFFIX, douyinliving.com
+DOMAIN-SUFFIX, douyinstatic.com
+DOMAIN-SUFFIX, pstatp.com
+DOMAIN-SUFFIX, amemv.com
+DOMAIN-SUFFIX, douyinvod.com

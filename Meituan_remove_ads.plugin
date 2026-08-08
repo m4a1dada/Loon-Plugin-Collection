@@ -1,0 +1,26 @@
+#!name=美团去广告
+#!desc=去除美团App开屏广告(快手SDK+Shark广告平台)、首页弹窗、信息流广告、图片广告等
+#!openUrl=https://apps.apple.com/app/id423237029
+#!author=Marvis
+#!tag=去广告
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://hub.kelee.one
+#!icon=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/meituan.png
+#!date=2026-07-05 02:10:00
+
+[Rule]
+# 开屏广告 - 快手广告SDK
+DOMAIN, open.kuaishouzt.com, REJECT
+# 开屏广告 - Shark广告平台
+DOMAIN, shark-wm.meituan.com, REJECT
+# 广告平台API
+DOMAIN, apimobile.meituan.com, REJECT
+# 广告CDN
+DOMAIN-SUFFIX, s3plus.meituan.net, REJECT
+DOMAIN-SUFFIX, flowplus.meituan.net, REJECT
+
+# 广告隧道代理IP（所有广告请求走此隧道转发）
+# Loon如支持IP-CIDR则生效，不支持则无副作用
+IP-CIDR, 103.37.152.97/32, REJECT, no-resolve
