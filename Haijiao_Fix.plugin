@@ -1,0 +1,16 @@
+#!name=娴疯瑙嗛淇
+#!desc=淇娴疯绀惧尯瑙嗛TS鍒嗙墖Content-Type寮傚父瀵艰嚧榛戝睆
+#!author=Marvis
+#!tag=淇
+#!system=
+#!system_version=
+#!loon_version=3.4.0(962)
+#!homepage=https://m4a1dada.github.io/Loon-Plugin-Collection/
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1002.png
+#!date=2026-08-08 22:00:00
+
+[Script]
+http-response ^https?://ts\d+\.hj260302818\.top/.*\.ts script-path=https://m4a1dada.github.io/Loon-Plugin-Collection/fix-hj-ts-content-type.js, requires-body=false, tag=fix-hj-ts-ct
+
+[MITM]
+hostname = *.hj260302818.top
