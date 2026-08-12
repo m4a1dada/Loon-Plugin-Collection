@@ -7,10 +7,11 @@
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
 #!icon=https://m4a1dada.github.io/Loon-Plugin-Collection/douyin_icon.png
-#!date=2026-08-12 20:16:00
+#!date=2026-08-12 20:25:00
 
 [Rule]
 DOMAIN-SUFFIX, byteimg.com, PROXY
+DOMAIN-SUFFIX, bytednsdoc.com, PROXY
 DOMAIN-SUFFIX, ibytedtos.com, PROXY
 DOMAIN-SUFFIX, pstatp.com, PROXY
 DOMAIN-SUFFIX, douyinvod.com, PROXY
@@ -19,6 +20,7 @@ DOMAIN-SUFFIX, snssdk.com, PROXY
 DOMAIN-SUFFIX, bytegecko.com, PROXY
 DOMAIN-SUFFIX, douyin.com, PROXY
 DOMAIN-SUFFIX, bytedanceapi.com, PROXY
+DOMAIN-SUFFIX, zijieapi.com, PROXY
 DOMAIN-SUFFIX, toutiaocloud.cn, PROXY
 DOMAIN-SUFFIX, bytecdn.com, PROXY
 DOMAIN-SUFFIX, volces.com, PROXY
