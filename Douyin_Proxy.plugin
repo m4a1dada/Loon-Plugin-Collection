@@ -1,5 +1,5 @@
 #!name=抖音分流
-#!desc=抖音全代理分流：WiFi/流量均显示节点IP，视频走代理（注意流量消耗）
+#!desc=手动切换代理/直连：抖音全域名分流，策略组「抖音分流」可切换PROXY/DIRECT
 #!author=Marvis
 #!tag=分流
 #!system=
@@ -7,22 +7,25 @@
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
 #!icon=https://m4a1dada.github.io/Loon-Plugin-Collection/douyin_icon.png
-#!date=2026-08-12 19:40:00
+#!date=2026-08-12 20:05:00
+
+[Policy]
+select=抖音分流, PROXY, DIRECT
 
 [Rule]
-DOMAIN-SUFFIX, byteimg.com, PROXY
-DOMAIN-SUFFIX, ibytedtos.com, PROXY
-DOMAIN-SUFFIX, pstatp.com, PROXY
-DOMAIN-SUFFIX, douyinvod.com, PROXY
-DOMAIN-SUFFIX, amemv.com, PROXY
-DOMAIN-SUFFIX, snssdk.com, PROXY
-DOMAIN-SUFFIX, bytegecko.com, PROXY
-DOMAIN-SUFFIX, douyin.com, PROXY
-DOMAIN-SUFFIX, bytedanceapi.com, PROXY
-DOMAIN-SUFFIX, toutiaocloud.cn, PROXY
-DOMAIN-SUFFIX, bytecdn.com, PROXY
-DOMAIN-SUFFIX, volces.com, PROXY
-DOMAIN-SUFFIX, douyincdn.com, PROXY
-DOMAIN-SUFFIX, douyinpic.com, PROXY
-DOMAIN-SUFFIX, douyinliving.com, PROXY
-DOMAIN-SUFFIX, douyinstatic.com, PROXY
+DOMAIN-SUFFIX, byteimg.com, 抖音分流
+DOMAIN-SUFFIX, ibytedtos.com, 抖音分流
+DOMAIN-SUFFIX, pstatp.com, 抖音分流
+DOMAIN-SUFFIX, douyinvod.com, 抖音分流
+DOMAIN-SUFFIX, amemv.com, 抖音分流
+DOMAIN-SUFFIX, snssdk.com, 抖音分流
+DOMAIN-SUFFIX, bytegecko.com, 抖音分流
+DOMAIN-SUFFIX, douyin.com, 抖音分流
+DOMAIN-SUFFIX, bytedanceapi.com, 抖音分流
+DOMAIN-SUFFIX, toutiaocloud.cn, 抖音分流
+DOMAIN-SUFFIX, bytecdn.com, 抖音分流
+DOMAIN-SUFFIX, volces.com, 抖音分流
+DOMAIN-SUFFIX, douyincdn.com, 抖音分流
+DOMAIN-SUFFIX, douyinpic.com, 抖音分流
+DOMAIN-SUFFIX, douyinliving.com, 抖音分流
+DOMAIN-SUFFIX, douyinstatic.com, 抖音分流
