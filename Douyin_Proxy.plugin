@@ -1,5 +1,5 @@
-﻿#!name=抖音分流
-#!desc=抖音地区分流：API走PROXY(切全局节点改IP)，视频CDN直连
+#!name=抖音分流
+#!desc=抖音全代理分流：WiFi/流量均显示节点IP，视频走代理（注意流量消耗）
 #!author=Marvis
 #!tag=分流
 #!system=
@@ -7,13 +7,13 @@
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
 #!icon=https://m4a1dada.github.io/Loon-Plugin-Collection/douyin_icon.png
-#!date=2026-07-05 03:10:00
+#!date=2026-08-12 19:40:00
 
 [Rule]
-DOMAIN-SUFFIX, byteimg.com, DIRECT
-DOMAIN-SUFFIX, ibytedtos.com, DIRECT
-DOMAIN-SUFFIX, pstatp.com, DIRECT
-DOMAIN-SUFFIX, douyinvod.com, DIRECT
+DOMAIN-SUFFIX, byteimg.com, PROXY
+DOMAIN-SUFFIX, ibytedtos.com, PROXY
+DOMAIN-SUFFIX, pstatp.com, PROXY
+DOMAIN-SUFFIX, douyinvod.com, PROXY
 DOMAIN-SUFFIX, amemv.com, PROXY
 DOMAIN-SUFFIX, snssdk.com, PROXY
 DOMAIN-SUFFIX, bytegecko.com, PROXY
