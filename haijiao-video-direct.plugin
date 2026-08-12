@@ -1,0 +1,8 @@
+﻿#!name=海角视频直连
+#!desc=海角(haijiao)视频CDN域名直连，解决播放卡顿；仅命中 hj260302818.top 视频域名，不影响其它插件
+#!openUrl=https://github.com/m4a1dada/Loon-Plugin-Collection
+#!system=loon
+#!loon_version=2.1.12
+
+[Rule]
+DOMAIN-SUFFIX,hj260302818.top,DIRECT
