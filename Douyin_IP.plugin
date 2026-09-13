@@ -1,4 +1,4 @@
-#!name=抖音分流
+#!name=抖音分流·IP直连
 #!desc=抖音地区分流：API走PROXY(切全局节点改IP)，视频CDN直连
 #!author=Marvis
 #!tag=分流
