@@ -1,4 +1,4 @@
-#!name=Gemini分流
+#!name=Gemini分流·代理
 #!desc=Gemini/Google AI 全域名分流，插件内PROXY可单独指向配置中的策略组（代理指向的策略）
 #!author=Marvis
 #!tag=分流
