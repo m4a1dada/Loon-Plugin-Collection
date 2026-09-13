@@ -11,7 +11,7 @@
 | 仓库地址 | `https://github.com/m4a1dada/Loon-Plugin-Collection` |
 | 默认分支 | `main` |
 | 维护者 | Marvis / m4a1dada |
-| 直链格式 | `https://cdn.jsdelivr.net/gh/m4a1dada/Loon-Plugin-Collection@main/文件名.plugin` |
+| 直链格式 | `https://m4a1dada.github.io/Loon-Plugin-Collection/文件名.plugin` |
 
 **本地 Clone 命令：**
 ```bash
@@ -39,12 +39,12 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 
 ### 图标规则
 
-- `#!icon` 字段**必须**使用 `raw.githubusercontent.com` 源（Loon 原生识别，不乱码）
+- `#!icon` 字段**必须**使用 GitHub Pages 源（https://m4a1dada.github.io/Loon-Plugin-Collection/icons/xxx.png），禁用 raw/jsDelivr
 - **禁止**在 `#!icon` 中使用 `jsDelivr` 或任何 CDN 域名
-- 图标 URL 示例：`https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/icons/AppName.png`
+- 图标 URL 示例：`https://m4a1dada.github.io/Loon-Plugin-Collection/icons/AppName.png`
 - 图标文件统一放在仓库 `icons/` 目录下
 
-> 注意区分：直链（README 表格中供 Loon 订阅的链接）用 jsDelivr CDN；`#!icon` 字段用 raw.githubusercontent.com。两者目的不同，不可混用。
+> 直链、`#!icon`、脚本引用**统一走 GitHub Pages**（https://m4a1dada.github.io/Loon-Plugin-Collection/...），禁用 raw 与 jsDelivr。
 
 ### 零外部脚本
 
@@ -55,9 +55,9 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 
 ### 国内网络兼容
 
-- 所有资源域名必须国内可直连
-- 直链使用 `raw.githubusercontent.com`（国内可访问）
-- 图标、脚本等外部引用不得使用被墙域名
+- 所有资源域名必须国内 iPhone 可直连
+- 直链与图标统一使用 GitHub Pages（实测 raw/jsDelivr 在国内 iPhone 上均间歇性超时）
+- 图标、脚本等外部引用一律走 Pages，禁止 raw/jsDelivr/kelee.one
 
 ### 段名规范
 
@@ -81,8 +81,8 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 - 完整元信息标签（name / desc / icon / author / category / tag）
 - 纯 Loon 原生规则（REJECT / reject / reject-dict），零外部脚本
 - 注释分行清晰，使用 `# ── xxx ──` 分组
-- `#!icon` 使用 raw.githubusercontent.com 源
-- 直链使用 jsDelivr CDN（`cdn.jsdelivr.net/gh/...@main/...`）
+- `#!icon` 使用 GitHub Pages 源
+- 直链使用 GitHub Pages（https://m4a1dada.github.io/Loon-Plugin-Collection/...）
 
 新插件直接复制 JD_remove_ads.plugin 结构，修改元信息和规则即可。
 
@@ -95,7 +95,7 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 ```
 | App | 插件文件 | 直链 | 广告类型 |
 |-----|---------|------|---------|
-| 应用名 | [文件名.plugin](./文件名.plugin) | [Raw](https://raw.githubusercontent.com/m4a1dada/Loon-Plugin-Collection/main/文件名.plugin) | 类型1/类型2/类型3 |
+| 应用名 | [文件名.plugin](./文件名.plugin) | [直链](https://m4a1dada.github.io/Loon-Plugin-Collection/文件名.plugin) | 类型1/类型2/类型3 |
 ```
 
 ### 新增插件时必做清单
@@ -132,8 +132,8 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 - 图标必须 120×120 RGB PNG（RGBA 模式不显示）
 - 图标文件头必须以 `89504e47` 开头（真 PNG，ICO 伪装不行）
 - 必须去除 ICC Profile（Loon 解析带 ICC Profile 的 PNG 时图标不显示）
-- `#!icon` 使用 `jsDelivr CDN` 源（`raw.githubusercontent.com` 在 Loon 内部下载时直连被 GFW 阻断，导致下载失败回退到文字图标；用户 Safari 走代理能打开不代表 Loon 自身能下载）
-- 插件直链使用 jsDelivr CDN
+- `#!icon` 使用 GitHub Pages 源（raw 在 Loon 内部下载被 GFW 阻断导致回退文字图标；jsDelivr 国内 iPhone 间歇超时）
+- 插件直链使用 GitHub Pages
 
 ### Loon 图标缓存终极难题（KFC 经验）
 
@@ -145,7 +145,7 @@ Loon 对插件的图标存在**多层顽固缓存**，以下方案按尝试顺�
 | 换图标文件名（KFC.png → KFC_icon.png）+ 更新 #!icon | 无效 |
 | 切换 CDN 源（raw → jsDelivr） | 无效（解决的是 GFW 阻断问题，不是缓存问题） |
 | 删除插件 + 杀 Loon 进程 + 重新添加 | 无效（Loon 对已知插件 ID 保留图标映射） |
-| **换插件文件名**（KFC_remove_ads.plugin → KFC_adblock.plugin） | ✅ 唯一生效 |
+| **换插件文件名**（KFC_remove_ads.plugin → KFC_adblock.plugin） | ✅ 唯一生效（注意：KFC_adblock 为历史缓存副本，已于 2026-09 删除，KFC 统一用 KFC_remove_ads.plugin） |
 
 **根因**：Loon 以插件文件名为 key 缓存图标。改图标文件、换 icon URL、杀进程重启，都不会触发 Loon 清掉旧缓存。只有换一个全新的插件文件名，Loon 才会把它当作全新插件，重新解析 `#!icon` 并下载图标。
 
@@ -201,7 +201,7 @@ https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx
    - 广告专用域名 → `[Rule]` 中添加 `DOMAIN-SUFFIX, xxx.com, REJECT`
    - 广告字段在业务 API 中 → `[Rewrite]` 中用 `reject-dict` 或 `response-body-json-del` 处理
 5. **更新 MITM**：将新域名加入 `[MitM]` hostname 列表（用 `DOMAIN-SUFFIX` 拦截的域名同时加入以便后续分析）
-6. **推送并交付**：`commit + push` 后，直接给用户 jsDelivr 直链，不附带解释或操作说明
+6. **推送并交付**：`commit + push` 后，直接给用户 GitHub Pages 直链（https://m4a1dada.github.io/Loon-Plugin-Collection/文件名.plugin），不附带解释或操作说明
 
 ### 常见广告 SDK 特征
 
@@ -223,7 +223,7 @@ https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx
 | 文件 | 用途 |
 |------|------|
 | `WexinMiniPrograms_Remove_ads.lpx` | Loon 可导入格式（开发/编辑用） |
-| `WexinMiniPrograms_Remove_ads.plugin` | 纯文本格式（GitHub 存储 + jsDelivr 分发） |
+| `WexinMiniPrograms_Remove_ads.plugin` | 纯文本格式（GitHub 存储 + Pages 分发） |
 
 ---
 
@@ -231,7 +231,7 @@ https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx
 
 ### 工作习惯
 - Agent 任务执行被中断后应默认继续执行，无需等待用户逐次确认
-- Agent 交付 Loon 插件时仅输出 jsDelivr 直链 URL，不附带解释或操作说明
+- Agent 交付 Loon 插件时仅输出 GitHub Pages 直链 URL（https://m4a1dada.github.io/Loon-Plugin-Collection/...），不附带解释或操作说明
 - Agent 排查问题时优先对比已有成功案例找差异，避免多轮盲目试错
 - Agent 修改 Git 仓库文件时直接 commit + push 即可，无需征求确认
 - Agent 向 GitHub 提交文件前必须检查内容，避免写入明文 Token 或敏感凭证
