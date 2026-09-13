@@ -1,4 +1,4 @@
-﻿#!name = QQ音乐去广告
+#!name = QQ音乐去广告
 #!desc = 去除QQ音乐开屏广告。纯规则方案，零脚本依赖，基于实际抓包分析：c6.y.qq.com 的 fcg_get_advert 为广告内容下发接口，szmg.qq.com 为腾讯广告联盟平台（offer_id/heartbeat）。不影响听歌、歌词、下载等核心功能。
 #!icon = https://m4a1dada.github.io/Loon-Plugin-Collection/icons/QQMusic.png
 #!author = Marvis
