@@ -31,7 +31,7 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 ```
 #!name = 应用名去广告
 #!desc = 描述覆盖的广告类型（开屏/横幅/弹窗/信息流等）
-#!icon = https://raw.githubusercontent.com/...  （必须 raw.githubusercontent.com 源）
+#!icon = https://m4a1dada.github.io/Loon-Plugin-Collection/icons/AppName.png  （必须 GitHub Pages 源）
 #!author = Marvis
 #!category = 去广告
 #!tag = 应用名
@@ -40,7 +40,7 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 ### 图标规则
 
 - `#!icon` 字段**必须**使用 GitHub Pages 源（https://m4a1dada.github.io/Loon-Plugin-Collection/icons/xxx.png），禁用 raw/jsDelivr
-- **禁止**在 `#!icon` 中使用 `jsDelivr` 或任何 CDN 域名
+- **禁止**在 `#!icon` 中使用 `raw.githubusercontent.com` 与 `jsDelivr`，统一使用 GitHub Pages
 - 图标 URL 示例：`https://m4a1dada.github.io/Loon-Plugin-Collection/icons/AppName.png`
 - 图标文件统一放在仓库 `icons/` 目录下
 
@@ -161,7 +161,7 @@ Loon 对插件的图标存在**多层顽固缓存**，以下方案按尝试顺�
 
 - KFC App（v6.29.0 iOS）不使用第三方广告 SDK，广告由百胜自有系统投放
 - 核心广告域名：`res.kfc.com.cn/CRM/kfcad/`（开屏广告预加载）、`dynamicad.kfc.com.cn`（动态广告 API）、`sares.kfc.com.cn`（广告 CDN）
-- 直接给用户 jsDelivr URL，用户自行在 Loon 中添加
+- 直接给用户 GitHub Pages URL（https://m4a1dada.github.io/Loon-Plugin-Collection/KFC_remove_ads.plugin），用户自行在 Loon 中添加
 
 ---
 
@@ -243,4 +243,4 @@ https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx
 
 ---
 
-*最后更新：2026-06-05*
+*最后更新：2026-09-13*
