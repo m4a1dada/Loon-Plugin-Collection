@@ -1,0 +1,16 @@
+#!name=韩剧社去广告
+#!desc=去除韩剧社App开屏广告（拦截开屏广告下发接口 /api/carp/kp/v2）。纯规则方案，零脚本依赖。
+#!author=Marvis
+#!category=去广告
+#!tag=韩剧社
+
+[General]
+bypass-tun =
+skip-proxy =
+
+[Rewrite]
+# 开屏广告下发接口（kp=开屏）→ 拒绝请求，App 取不到广告数据即不展示
+^https?:\/\/hjqapi\.yutoons\.com\/api\/carp\/kp(\/v\d+)? - reject
+
+[Mitm]
+hostname = hjqapi.yutoons.com
