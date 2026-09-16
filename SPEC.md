@@ -122,6 +122,7 @@ git clone https://<TOKEN>@github.com/m4a1dada/Loon-Plugin-Collection.git
 | 京东 | `JD_remove_ads.plugin` | 首页3秒开屏/悬浮推广/物流/订单/个人页广告 |
 | 中国移动 | `ChinaMobile.plugin` | 开屏/弹窗/首页促销/发现页广告 |
 | 肯德基 | `KFC_remove_ads.plugin` | 去除开屏广告及内部广告 |
+| 韩剧社 | `Hanjushe_remove_ads.plugin` | 开屏广告（拦截 /api/carp/kp/v2） |
 | 微信小程序 | `WexinMiniPrograms_Remove_ads.plugin` | 40+ 小程序开屏/弹窗/横幅/信息流广告 |
 
 ---
