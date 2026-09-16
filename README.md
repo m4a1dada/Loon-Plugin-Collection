@@ -27,6 +27,7 @@
 | 抖音分流（代理） | Douyin_Proxy.plugin | [Douyin_Proxy.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Douyin_Proxy.plugin) | 抖音全域名分流，PROXY 可指向策略组 |
 | Gemini分流（代理） | Gemini_Proxy.plugin | [Gemini_Proxy.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Gemini_Proxy.plugin) | Gemini/Google AI 全域名分流 |
 | 海角视频 | haijiao-video-direct.plugin | [haijiao-video-direct.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/haijiao-video-direct.plugin) | 海角视频直连/去广告 |
+| 韩剧社 | Hanjushe_remove_ads.plugin | [Hanjushe_remove_ads.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Hanjushe_remove_ads.plugin) | 开屏广告 |
 | Insav 解锁 | insav.lpx | [insav.lpx](https://m4a1dada.github.io/Loon-Plugin-Collection/insav.lpx) | VIP 解锁 + 去广告 + 播放器跳转 |
 
 > 直链格式：`https://m4a1dada.github.io/Loon-Plugin-Collection/插件文件名`
@@ -56,6 +57,7 @@ Loon-Plugin-Collection/
 ├── Douyin_IP.plugin / Douyin_Proxy.plugin  # 抖音分流
 ├── Gemini_Proxy.plugin          # Gemini 分流
 ├── haijiao-video-direct.plugin  # 海角视频直连
+├── Hanjushe_remove_ads.plugin   # 韩剧社去广告
 ├── insav.lpx                    # Insav 解锁
 ├── icons/                       # 图标目录
 └── scripts/                     # 脚本目录
