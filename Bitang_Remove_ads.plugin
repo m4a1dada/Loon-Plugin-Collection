@@ -1,17 +1,27 @@
 #!name=碧淘充电桩去广告
-#!desc=碧淘充电桩小程序去广告，拦截 8ziben.com 广告SDK域名
+#!desc=碧淘充电桩小程序去广告：广告SDK(8ziben)、口令广告(shanhu188)、保险落地页(tjjt360)、自建广告平台(yidianlingyi adpp)、banner轮播接口(cdyun)与广告素材
 #!icon=https://m4a1dada.github.io/Loon-Plugin-Collection/icons/WeixinMiniPrograms.png
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!author=Marvis
 #!category=小程序
 #!tag=去广告
-#!system=
-#!system_version=
-#!loon_version=3.4.0(962)
-#!homepage=https://m4a1dada.github.io/Loon-Plugin-Collection/README.md
-#!date=2026-06-05 19:30:00
+#!homepage=https://github.com/m4a1dada/Loon-Plugin-Collection
 
 [Rule]
 DOMAIN-SUFFIX, 8ziben.com, REJECT
+DOMAIN-SUFFIX, shanhu188.com, REJECT
+DOMAIN-SUFFIX, tjjt360.com, REJECT
+
+[Rewrite]
+# 旧后端：自建广告平台（广告查询+曝光上报）
+^https?:\/\/api\.yidianlingyi\.cn\/\/?adpp\/ reject
+# 旧后端：OSS 广告素材
+^https?:\/\/frontend-c\.oss-cn-hangzhou\.aliyuncs\.com\/wz-mini-program\/(v2\/)?find\/(ad\/integral\.webp|banner\.png)$ reject
+# 新后端：banner 轮播/公告接口（POST）
+^https?:\/\/api-mini\.cdyun\.vip\/btzncdz\/banner\/index reject
+# 新后端：OSS 轮播广告图
+^https?:\/\/charge-pile\.oss-cn-hangzhou\.aliyuncs\.com\/banner\/ reject
+# 新后端：合作推广广告图
+^https?:\/\/charge-pile\.oss-cn-hangzhou\.aliyuncs\.com\/icon\/hezuo\.gif$ reject
 
 [MitM]
-hostname=api-mini.cdyun.vip, 8ziben.com
+hostname=api-mini.cdyun.vip, 8ziben.com, api.yidianlingyi.cn, frontend-c.oss-cn-hangzhou.aliyuncs.com, charge-pile.oss-cn-hangzhou.aliyuncs.com
