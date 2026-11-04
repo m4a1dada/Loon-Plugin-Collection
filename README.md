@@ -22,7 +22,6 @@
 | 肯德基 | KFC_remove_ads.plugin | [KFC_remove_ads.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/KFC_remove_ads.plugin) | 开屏广告及内部广告 |
 | QQ音乐 | QQMusic_remove_ads.plugin | [QQMusic_remove_ads.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/QQMusic_remove_ads.plugin) | 开屏/播放页/列表页广告 |
 | 美团 | Meituan_remove_ads.plugin | [Meituan_remove_ads.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Meituan_remove_ads.plugin) | 开屏/首页弹窗/信息流/图片广告 |
-| 碧淘充电桩 | Bitang_Remove_ads.plugin | [Bitang_Remove_ads.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Bitang_Remove_ads.plugin) | 充电桩 App 开屏/弹窗广告 |
 | 抖音分流（IP直连） | Douyin_IP.plugin | [Douyin_IP.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Douyin_IP.plugin) | API 走代理改 IP，视频 CDN 直连 |
 | 抖音分流（代理） | Douyin_Proxy.plugin | [Douyin_Proxy.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Douyin_Proxy.plugin) | 抖音全域名分流，PROXY 可指向策略组 |
 | Gemini分流（代理） | Gemini_Proxy.plugin | [Gemini_Proxy.plugin](https://m4a1dada.github.io/Loon-Plugin-Collection/Gemini_Proxy.plugin) | Gemini/Google AI 全域名分流 |
@@ -53,7 +52,6 @@ Loon-Plugin-Collection/
 ├── KFC_remove_ads.plugin        # 肯德基去广告
 ├── QQMusic_remove_ads.plugin    # QQ音乐去广告
 ├── Meituan_remove_ads.plugin    # 美团去广告
-├── Bitang_Remove_ads.plugin     # 碧淘充电桩去广告
 ├── Douyin_IP.plugin / Douyin_Proxy.plugin  # 抖音分流
 ├── Gemini_Proxy.plugin          # Gemini 分流
 ├── haijiao-video-direct.plugin  # 海角视频直连
