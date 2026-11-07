@@ -33,6 +33,10 @@ DOMAIN-SUFFIX, sdk.fliduo.cn, REJECT
 DOMAIN, report-online.sh.wxgateway.com, REJECT
 DOMAIN-SUFFIX, report-online.sh.wxgateway.com, REJECT
 
+# ── 碧淘充电桩小程序：微信官方开屏广告(Splash Ad)素材（mmbiz 精确URL，勿整域拦截） ──
+URL-REGEX,^http://mmbiz\.qpic\.cn/mmbiz_png/KAsYlE9TJEMRZap8v6wLWkpYM5FtOWIylyrZibsRPGswrkBj5nIhGykbaMM4ppNI2zic3RHjfSm6pInDRPuxia78w/,REJECT
+URL-REGEX,^http://mmbiz\.qpic\.cn/mmbiz_png/Hf3tbIcnw1h1WtQG3aFO2icTqdyhib8VpvJv44iaOR42dsLY7wZkmWCEP5sjg5KK8hgFplQA7NeTyCfTSkwCbeCRw/,REJECT
+
 # ── 万桩充电小程序：口令广告 SDK + 保险落地页（整域） ──
 DOMAIN-SUFFIX, shanhu188.com, REJECT
 DOMAIN-SUFFIX, tjjt360.com, REJECT
