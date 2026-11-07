@@ -25,6 +25,14 @@ DOMAIN, e.jparking.cn, REJECT
 DOMAIN, 8ziben.com, REJECT
 DOMAIN-SUFFIX, 8ziben.com, REJECT
 
+# ── 碧淘充电桩小程序：第二家广告 DSP 平台 fliduo（整域双保险） ──
+DOMAIN, sdk.fliduo.cn, REJECT
+DOMAIN-SUFFIX, sdk.fliduo.cn, REJECT
+
+# ── 碧淘充电桩小程序：微信广告曝光/点击上报（整域，消除 404 重试噪声） ──
+DOMAIN, report-online.sh.wxgateway.com, REJECT
+DOMAIN-SUFFIX, report-online.sh.wxgateway.com, REJECT
+
 # ── 万桩充电小程序：口令广告 SDK + 保险落地页（整域） ──
 DOMAIN-SUFFIX, shanhu188.com, REJECT
 DOMAIN-SUFFIX, tjjt360.com, REJECT
@@ -225,7 +233,6 @@ DOMAIN-SUFFIX, tjjt360.com, REJECT
 ^https?:\/\/api-mini\.cdyun\.vip\/btzncdz\/banner\/index reject
 ^https?:\/\/charge-pile\.oss-cn-hangzhou\.aliyuncs\.com\/banner\/ reject
 ^https?:\/\/charge-pile\.oss-cn-hangzhou\.aliyuncs\.com\/icon\/hezuo\.gif$ reject
-^https?:\/\/report-online\.sh\.wxgateway\.com\/SdkReport reject
 
 [Script]
 http-response ^https:\/\/webapi\.qmai\.cn\/web\/catering\/design\/homePage-Config script-path=https://m4a1dada.github.io/Loon-Plugin-Collection/scripts/kff.js, requires-body=true, tag=企迈点单系统去广告
